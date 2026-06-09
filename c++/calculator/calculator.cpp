@@ -15,14 +15,17 @@ int main()
 	double a, b;
 
 	do {
-		// tell user to enter 2 numbers
-		cout << "\nEnter two numbers: ";
-		cin >> a >> b;
 
 		// display menu
 		cout << "========= CALCULATOR ===========" << endl;
 		cout << "1. Add\n2. Subtract\n3. Divide\n4. Multiply\n5. Exit\n" << endl;
 		cin >> input;
+
+		// tell user to enter 2 numbers
+		if( input >= 1 && input <= 4) {
+			cout << "\nEnter two numbers: ";
+			cin >> a >> b;
+		}
 
 		switch(input) {
 			case 1 : cout << a << "+" << b << " = " << Add(a, b) << endl; break;
