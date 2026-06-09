@@ -31,7 +31,29 @@ class Calculator
 			{
 				a = b = 0;
 			}
+			switch(option)
+			{
+				case 1: Console.WriteLine($"{a} + {b} = {Add(a, b)}"); break;
+				case 2: Console.WriteLine($"{a} - {b} = {Subtract(a, b)}"); break;
+				case 3: Console.WriteLine($"{a} / {b} = {Divide(a, b)}"); break;
+				case 4: Console.WriteLine($"{a} x {b} = {Multiply(a, b)}"); break;
+				case 5: Console.WriteLine("Goodbye..."); break;
+				default: Console.WriteLine("Invalid input!"); break;
+			}
 		}
 		while (option != 5);
+	}
+
+	static double Add(double a, double b) { return a + b; }
+	static double Subtract(double a, double b) { return a - b; }
+	static double Multiply(double a, double b) { return a * b; }
+	static double Divide(double a, double b)
+	{
+		if(b == 0 )
+		{
+			Console.WriteLine("Error: Division by zero!");
+			return double.NaN;
+		}
+		return a / b;
 	}
 }
