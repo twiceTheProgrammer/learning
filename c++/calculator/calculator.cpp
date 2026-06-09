@@ -2,6 +2,11 @@
 
 using namespace std;
 
+double Add(double a, double b);
+double Subtract(double a, double b);
+double Divide(double a, double b);
+double Multiply(double a, double b);
+
 int main()
 {
 	int input;
@@ -16,12 +21,20 @@ int main()
 
 		cout << "\nChoose your Arithmatic Operation : " << endl;
 		cin >> input;
-		
+		int a; 
+		int b;
+
+		cout << "First Number : " << endl;
+		cin >> a;
+
+		cout << "Second Number : " << endl;
+		cin >> b;
+
 		switch(input) {
-			case 1 : cout << "Add..." << endl; break;
-			case 2 : cout << "Subtract..." << endl; break;
-			case 3 : cout << "Divide..." << endl; break;
-			case 4 : cout << "Multiply..." << endl; break;
+			case 1 : cout << a << "+" << b << " = " << Add(a, b) << endl; break;
+			case 2 : cout << a << "-" << b << " = " << Subtract(a, b) << endl; break;
+			case 3 : cout <<  a << "/" << b << " = " << Divide(a, b)  << endl; break;
+			case 4 : cout <<  a << "x" << b << " = " << Multiply(a, b)  << endl; break;
 			case 5 : cout << "Exit..." << endl; break;
 			default : {
 				cout << "Invalid input!" << endl;
@@ -31,3 +44,14 @@ int main()
 	cout << "\nGoodbye..." << endl;
 	return 0;
 }
+
+double Add(double a, double b) { return a + b; }
+double Subtract(double a, double b) { return a - b; }
+double Divide(double a, double b) { 
+	if (!b) {
+		return a / b;
+	}
+	return 0;
+}
+
+double Multiply(double a, double b) { return a * b; }
