@@ -1,13 +1,13 @@
 #include <iostream>
-#include <cmath>
 #include <string>
+#include "calculator.hpp"
 
 using namespace std;
 
-double Add(double a, double b);
-double Subtract(double a, double b);
-double Divide(double a, double b);
-double Multiply(double a, double b);
+double Add(double a, double b) { return a + b; }
+double Subtract(double a, double b) { return a - b; }
+double Divide(double a, double b) {  return b == 0 ? NAN : a / b; }
+double Multiply(double a, double b) { return a * b; }
 
 int main()
 {
@@ -38,8 +38,3 @@ int main()
 	cout << "\nGoodbye..." << endl;
 	return 0;
 }
-
-double Add(double a, double b) { return a + b; }
-double Subtract(double a, double b) { return a - b; }
-double Divide(double a, double b) {  return b == 0 ? NAN : a / b; }
-double Multiply(double a, double b) { return a * b; }
