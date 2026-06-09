@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cmath>
+#include <string>
 
 using namespace std;
 
@@ -10,30 +12,22 @@ double Multiply(double a, double b);
 int main()
 {
 	int input;
-	cout << "========= CALCULATOR ===========" << endl;
-	cout << "1. Add" << endl;
-	cout << "2. Subtract" << endl;
-	cout << "3. Divide" << endl;
-	cout << "4. Multiply" << endl;
-	cout << "5. Exit" << endl;
+	double a, b;
 
 	do {
+		// tell user to enter 2 numbers
+		cout << "\nEnter two numbers: ";
+		cin >> a >> b;
 
-		cout << "\nChoose your Arithmatic Operation : " << endl;
+		// display menu
+		cout << "========= CALCULATOR ===========" << endl;
+		cout << "1. Add\n2. Subtract\n3. Divide\n4. Multiply\n5. Exit\n" << endl;
 		cin >> input;
-		int a; 
-		int b;
-
-		cout << "First Number : " << endl;
-		cin >> a;
-
-		cout << "Second Number : " << endl;
-		cin >> b;
 
 		switch(input) {
 			case 1 : cout << a << "+" << b << " = " << Add(a, b) << endl; break;
 			case 2 : cout << a << "-" << b << " = " << Subtract(a, b) << endl; break;
-			case 3 : cout <<  a << "/" << b << " = " << Divide(a, b)  << endl; break;
+			case 3 : cout <<  a << "/" << b << " = " << (b == 0 ? "Undefined" :  to_string(Divide(a, b)))  << endl; break;
 			case 4 : cout <<  a << "x" << b << " = " << Multiply(a, b)  << endl; break;
 			case 5 : cout << "Exit..." << endl; break;
 			default : {
@@ -47,11 +41,5 @@ int main()
 
 double Add(double a, double b) { return a + b; }
 double Subtract(double a, double b) { return a - b; }
-double Divide(double a, double b) { 
-	if (!b) {
-		return a / b;
-	}
-	return 0;
-}
-
+double Divide(double a, double b) {  return b == 0 ? NAN : a / b; }
 double Multiply(double a, double b) { return a * b; }
