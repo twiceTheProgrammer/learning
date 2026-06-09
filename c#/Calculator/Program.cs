@@ -1,2 +1,10 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿
+using System;
+
+class HelloWorld
+{	
+	static void Main(String[] args)
+	{
+		Console.WriteLine("Hello Calculator");
+	}
+}
