@@ -1,0 +1,1 @@
+Just a learning repo to learn some fundamentals in programming as a self taught developer.
