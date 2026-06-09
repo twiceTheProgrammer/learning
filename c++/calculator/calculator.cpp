@@ -15,7 +15,6 @@ int main()
 	double a, b;
 
 	do {
-
 		// display menu
 		cout << "========= CALCULATOR ===========" << endl;
 		cout << "1. Add\n2. Subtract\n3. Divide\n4. Multiply\n5. Exit\n" << endl;
